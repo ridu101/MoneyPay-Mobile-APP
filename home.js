@@ -27,3 +27,17 @@ document.getElementById('btn-add')
 
 
     })
+// toggling feature
+document.getElementById('add-money-btn')
+    .addEventListener('click', function () {
+        document.getElementById('cash-out-parent').style.display = 'none';
+        document.getElementById('add-money-parent').style.display = 'block';
+
+    })
+document.getElementById('cash-out-btn')
+    .addEventListener('click', function () {
+        document.getElementById('add-money-parent').style.display = 'none';
+        document.getElementById('cash-out-parent').style.display = 'block';
+
+    })
+    // cashout button 
