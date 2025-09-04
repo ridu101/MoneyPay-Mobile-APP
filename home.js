@@ -18,6 +18,7 @@ document.getElementById('btn-add')
             alert('Provide Correct Pin');
             return;
         }
+
         // accessioning the available balance 
         const availableBalance = parseInt(document.getElementById('avail-balance').innerText);
 
@@ -40,4 +41,24 @@ document.getElementById('cash-out-btn')
         document.getElementById('cash-out-parent').style.display = 'block';
 
     })
-    // cashout button 
+// withdraw button event handler
+
+document.getElementById('withdraw-btn')
+    .addEventListener('click', function () {
+        const availableBalance = parseInt(document.getElementById('avail-balance').innerText)
+        const withdrawAmount = parseInt(document.getElementById('with-amount').value);
+        const accountNumber = parseInt(document.getElementById('bank-number').value)
+        const pinNumber = parseInt(document.getElementById('pin-number-withdraw').value);
+        if (accountNumber != validNumber) {
+            alert('Enter valid account Number')
+        }
+        if (pinNumber != validPin) {
+            alert('Enter valid pin')
+        }
+        const amountAfterWithdraw = availableBalance - withdrawAmount;
+
+        document.getElementById('avail-balance').innerText = amountAfterWithdraw;
+    })
+
+
+
